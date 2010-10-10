@@ -1,5 +1,8 @@
 
-//teste
+// made by Samir Cury
+// @samircury || eu@samircury.eng.br
+// The goal is to use a line sensor on pin 5 to measure when the robot is on the line or not, and seek()
+// tells how it seeks the line back, need improvements, but can already work =)
 
 int left_motor = 9;
 int right_motor = 10;
