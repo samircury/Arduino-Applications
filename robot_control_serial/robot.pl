@@ -13,8 +13,8 @@ $sp->parity("none");
 
 #$sp->write(s);
 
-ReadMode 'cbreak';
-my $input = ReadKey(0);
+ReadMode 'cbreak'; # com isso a leitura do terminal é de caracter por caracter, assim que eles são pressionados, diferente da leitura normal, que é linha a alinha
+my $input = ReadKey(0); 
 
 
 sub kill_me {
@@ -29,17 +29,9 @@ while (1) {
 
 	kill_me() if $input eq "q";
 
-	$sp->write($input);
-	print $input, $/;
-	if ( $input eq "w" ) {
- 		$sp->write("w");
-	}
-	if ( $input eq "s" ) {
- 		$sp->write("s");
-	}
+	$sp->write($input); # Manda o char que for para o Arduino
 
-
+	print $input, $/; # Imprime na tela só para você ver o que está fazendo.
 }
 
-#    print "\033[2J";
 
